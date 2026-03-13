@@ -1,4 +1,4 @@
-package cafeteria.command;
+package com.cafeteria.command;
 
 public interface Command {
     void execute();

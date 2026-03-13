@@ -1,7 +1,7 @@
-package cafeteria.command;
+package com.cafeteria.command;
 
-import cafeteria.iterator.ProductIterator;
-import cafeteria.order.Order;
+import com.cafeteria.model.Order;
+import com.cafeteria.model.Product;
 
 public class ShowOrderCommand implements Command {
 
@@ -14,10 +14,9 @@ public class ShowOrderCommand implements Command {
     @Override
     public void execute() {
         System.out.println("\n📋 Productos del pedido:");
-        ProductIterator iterator = order.iterator();
         int count = 1;
-        while (iterator.hasNext()) {
-            System.out.println("  " + count++ + ". " + iterator.next());
+        for (Product product : order.getProducts()) {
+            System.out.println("  " + count++ + ". " + product);
         }
         if (count == 1) {
             System.out.println("  (Sin productos aún)");

@@ -1,6 +1,7 @@
-package cafeteria.command;
+package com.cafeteria.command;
 
-import cafeteria.order.Order;
+import com.cafeteria.model.Order;
+import com.cafeteria.model.OrderStatus;
 
 public class CancelOrderCommand implements Command {
 
@@ -12,7 +13,7 @@ public class CancelOrderCommand implements Command {
 
     @Override
     public void execute() {
-        order.cancel();
+        order.setStatus(OrderStatus.CANCELLED);
         System.out.println("✔ Pedido cancelado.");
     }
 

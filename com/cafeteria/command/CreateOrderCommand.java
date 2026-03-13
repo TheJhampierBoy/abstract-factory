@@ -1,23 +1,29 @@
-package cafeteria.command;
+package com.cafeteria.command;
 
-import cafeteria.order.OrderManager;
+import com.cafeteria.model.Order;
+import com.cafeteria.model.OrderRepository;
 
 public class CreateOrderCommand implements Command {
 
-    private OrderManager manager;
+    private OrderRepository repository;
+    private Order createdOrder;
 
-    public CreateOrderCommand(OrderManager manager) {
-        this.manager = manager;
+    public CreateOrderCommand(OrderRepository repository) {
+        this.repository = repository;
     }
 
     @Override
     public void execute() {
-        manager.createOrder();
+        createdOrder = new Order("Cliente");
+        repository.addOrder(createdOrder);
         System.out.println("✔ Pedido creado.");
     }
 
     @Override
     public void undo() {
-        System.out.println("↩ Creación de pedido deshecha.");
+        if (createdOrder != null) {
+            repository.removeOrder(createdOrder);
+            System.out.println("↩ Creación de pedido deshecha.");
+        }
     }
 }

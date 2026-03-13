@@ -1,6 +1,7 @@
-package cafeteria.command;
+package com.cafeteria.command;
 
-import cafeteria.order.Order;
+import com.cafeteria.model.Order;
+import com.cafeteria.model.OrderStatus;
 
 public class ConfirmOrderCommand implements Command {
 
@@ -12,7 +13,7 @@ public class ConfirmOrderCommand implements Command {
 
     @Override
     public void execute() {
-        order.confirm();
+        order.setStatus(OrderStatus.CONFIRMED);
         System.out.println("✔ Pedido confirmado y pago procesado.");
     }
 
