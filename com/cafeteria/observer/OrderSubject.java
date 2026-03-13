@@ -33,4 +33,12 @@ public class OrderSubject implements Subject {
         notifyObservers("New order ready to process: " + orderName);
     }
 
+    public List<Observer> getObservers() {
+        return observers;
+    }
+
+    public void setObservers(List<Observer> observers) {
+        this.observers = observers;
+    }
+
 }
