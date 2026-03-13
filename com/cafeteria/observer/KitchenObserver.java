@@ -1,12 +1,12 @@
 package com.cafeteria.observer;
 
-public class KitchenObserver implements Observer {
+import com.cafeteria.model.Order;
+
+public class KitchenObserver implements OrderObserver {
 
     @Override
-    public void update(String message) {
-
-        System.out.println("Kitchen received notification: " + message);
-
+    public void update(Order order) {
+        System.out.println("Kitchen received notification: Order #" + order.getId() + " - Status: " + order.getStatus().getDescription());
     }
 
 }
