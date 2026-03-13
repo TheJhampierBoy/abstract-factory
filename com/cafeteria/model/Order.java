@@ -98,27 +98,27 @@ public class Order {
 
     public String getDetails() {
         StringBuilder sb = new StringBuilder();
-        sb.append("=== Order #").append(id).append(" ===\n");
-        sb.append("Client: ").append(client).append("\n");
-        sb.append("Status: ").append(status.getDescription()).append("\n");
-        sb.append("Products:\n");
+        sb.append("=== Pedido #").append(id).append(" ===\n");
+        sb.append("Cliente: ").append(client).append("\n");
+        sb.append("Estado: ").append(status.getDescription()).append("\n");
+        sb.append("Productos:\n");
         for (Product product : products) {
             sb.append("  - ").append(product.getName())
               .append(" ($").append(product.getPrice()).append(")\n");
         }
         sb.append("Subtotal: $").append(getSubtotal()).append("\n");
         if (discount > 0) {
-            sb.append("Discount: -$").append(discount).append("\n");
+            sb.append("Descuento: -$").append(discount).append("\n");
         }
         sb.append("Total: $").append(getTotal()).append("\n");
         if (paymentStrategy != null) {
-            sb.append("Payment method: ").append(paymentStrategy.getName()).append("\n");
+            sb.append("Método de pago: ").append(paymentStrategy.getName()).append("\n");
         }
         return sb.toString();
     }
 
     @Override
     public String toString() {
-        return "Order #" + id + " - Client: " + client + " - Status: " + status.getDescription();
+        return "Pedido #" + id + " - Cliente: " + client + " - Estado: " + status.getDescription();
     }
 }

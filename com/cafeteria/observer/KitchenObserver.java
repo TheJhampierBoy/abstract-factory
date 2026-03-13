@@ -6,7 +6,7 @@ public class KitchenObserver implements OrderObserver {
 
     @Override
     public void update(Order order) {
-        System.out.println("Kitchen received notification: Order #" + order.getId() + " - Status: " + order.getStatus().getDescription());
+        System.out.println("Cocina recibió notificación: Pedido #" + order.getId() + " - Estado: " + order.getStatus().getDescription());
     }
 
 }
