@@ -1,21 +1,22 @@
 package com.cafeteria.iterator;
 
 import java.util.List;
+import com.cafeteria.model.Product;
 
 public class ProductIterator {
 
-    private List<String> products;
-    private int index = 0;
+    private List<Product> products;
+    private int position = 0;
 
-    public ProductIterator(List<String> products) {
+    public ProductIterator(List<Product> products) {
         this.products = products;
     }
 
     public boolean hasNext() {
-        return index < products.size();
+        return position < products.size();
     }
 
-    public String next() {
-        return products.get(index++);
+    public Product next() {
+        return products.get(position++);
     }
 }

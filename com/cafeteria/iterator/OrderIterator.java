@@ -1,19 +1,22 @@
 package com.cafeteria.iterator;
+
 import java.util.List;
+import com.cafeteria.model.Order;
+
 public class OrderIterator {
 
-    private List<String> orders;
-    private int index = 0;
+    private List<Order> orders;
+    private int position = 0;
 
-    public OrderIterator(List<String> orders) {
+    public OrderIterator(List<Order> orders) {
         this.orders = orders;
     }
 
     public boolean hasNext() {
-        return index < orders.size();
+        return position < orders.size();
     }
 
-    public String next() {
-        return orders.get(index++);
+    public Order next() {
+        return orders.get(position++);
     }
 }
