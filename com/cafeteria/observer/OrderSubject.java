@@ -16,6 +16,7 @@ public class OrderSubject implements Subject {
     @Override
     public void removeObserver(Observer observer) {
         observers.remove(observer);
+    System.out.println("Observer removed: " + observer.getClass().getSimpleName());
     }
 
     @Override
