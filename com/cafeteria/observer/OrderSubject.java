@@ -9,7 +9,8 @@ public class OrderSubject implements Subject {
 
     @Override
     public void addObserver(Observer observer) {
-        observers.add(observer);
+         observers.add(observer);
+    System.out.println("Observer added: " + observer.getClass().getSimpleName());
     }
 
     @Override
