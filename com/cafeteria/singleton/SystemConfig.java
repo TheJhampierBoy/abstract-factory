@@ -4,47 +4,54 @@ public class SystemConfig {
 
     private static SystemConfig instance;
 
-    private String sede;
-    private double impuesto;
-    private String moneda;
+    private String branch;
+    private double tax;
+    private String currency;
+    private int dailyOrderLimit;
 
     private SystemConfig() {
-        sede = "Bogotá";
-        impuesto = 0.19;
-        moneda = "COP";
+        branch = "Bogota";
+        tax = 0.19;
+        currency = "COP";
+        dailyOrderLimit = 100;
     }
-    
-    public String getSede() {
-        return sede;
-    }
-
-    public void setSede(String sede) {
-        this.sede = sede;
-    }
-    
-    public double getImpuesto() {
-        return impuesto;
-    }
-
-
-    public void setImpuesto(double impuesto) {
-        this.impuesto = impuesto;
-    }
-
-    public String getMoneda() {
-        return moneda;
-    }
-
-    public void setMoneda(String moneda) {
-        this.moneda = moneda;
-    }
-    
-
     public static SystemConfig getInstance() {
         if(instance == null) {
             instance = new SystemConfig();
         }
         return instance;
     }
- 
+
+    public String getBranch() {
+        return branch;
+    }
+
+    public void setBranch(String branch) {
+        this.branch = branch;
+    }
+
+    public double getTax() {
+        return tax;
+    }
+
+    public void setTax(double tax) {
+        this.tax = tax;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
+    }
+
+    public int getDailyOrderLimit() {
+        return dailyOrderLimit;
+    }
+
+    public void setDailyOrderLimit(int dailyOrderLimit) {
+        this.dailyOrderLimit = dailyOrderLimit;
+    }
+
 }
