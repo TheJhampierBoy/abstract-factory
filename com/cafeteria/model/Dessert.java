@@ -1,11 +1,11 @@
 package com.cafeteria.model;
 
-public class Combo implements Product {
+public class Dessert implements Product {
     private String name;
     private double price;
     private String description;
 
-    public Combo(String name, double price, String description) {
+    public Dessert(String name, double price, String description) {
         this.name = name;
         this.price = price;
         this.description = description;
@@ -23,7 +23,7 @@ public class Combo implements Product {
 
     @Override
     public String getType() {
-        return "Combo";
+        return "Dessert";
     }
 
     @Override
