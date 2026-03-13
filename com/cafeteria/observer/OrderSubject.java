@@ -41,4 +41,10 @@ public class OrderSubject implements Subject {
         this.observers = observers;
     }
 
+    public void updateOrderStatus(String orderName, String status) {
+    System.out.println("Order: " + orderName + " | Status: " + status);
+
+    notifyObservers("Order '" + orderName + "' changed status to: " + status);
+    }
+
 }
